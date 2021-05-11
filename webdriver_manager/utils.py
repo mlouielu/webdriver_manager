@@ -160,7 +160,7 @@ def chrome_version(browser_type=ChromeType.GOOGLE):
 def firefox_version():
     pattern = r'\d+.*'
     cmd_mapping = {
-        OSType.LINUX: 'firefox --version',
+        OSType.LINUX: 'firefox-developer-edition --version',
         OSType.MAC: r'/Applications/Firefox.app/Contents/MacOS/firefox --version',
         OSType.WIN: r"Powershell (Get-Item (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe').'(Default)').VersionInfo.ProductVersion",
     }

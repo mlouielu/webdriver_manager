@@ -29,6 +29,10 @@ class DriverCache(object):
         binary = self.__get_binary(files, driver_name)
         binary_path = os.path.join(path, binary)
         self.__save_metadata(browser_version, driver_name, os_type, driver_version, binary_path)
+
+        if "chrome" in binary_path:
+            os.system(f"perl -pi -e 's/cdc_/dog_/g' {binary_path}")
+
         log(f"Driver has been saved in cache [{path}]")
         return binary_path
 
